@@ -1,11 +1,11 @@
 # ollama-streamlit
 
-## Description
+### Description
 Ollama tutorial using streamlit 
 
-## Install
+### Install
 `pip install -f requirements`
 
 
-## Run
+### Run
 `streamlit run ./app.py`
