@@ -4,8 +4,8 @@
 Ollama tutorial using streamlit 
 
 ## Install
-pip install -f requirements
+`pip install -f requirements`
 
 
 ## Run
-streamlit run ./app.py
+`streamlit run ./app.py`
