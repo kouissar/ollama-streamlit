@@ -1,5 +1,3 @@
-# import platform
-# import webbrowser
 from langchain.callbacks.manager import CallbackManager
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain.llms import Ollama
@@ -61,15 +59,11 @@ def sample_task():
     # Simulate a task by sleeping for 2 seconds
     time.sleep(2)
 
-
-
 # Streamlit interface
 st.title('Ask Anything')
-# col1, col2 = st.columns(2)
 model= st.sidebar.selectbox('Select a model', options=['llama2', 'mistral', 'orca-mini'])
 # Text box for user input
 prompt = st.text_area("Enter your prompt:")
-# response = "1"
 # Sidebar to display recent descriptions
 st.sidebar.subheader('Chat History')
 recent_responses = get_recent_responses()
@@ -79,7 +73,6 @@ selected_date = st.sidebar.radio('Last 7 days', [date_saved[0] for date_saved in
 llm = Ollama(
     model=model, callback_manager=CallbackManager([StreamingStdOutCallbackHandler()])
 )
-
 
 
 
@@ -98,20 +91,6 @@ if st.button('Send'):
             execution_time = measure_execution_time(process_prompt)
             st.caption(f"Task execution time: {execution_time} seconds")
  
-# st.write("value of response: " + response)
-
-# # Button to send request
-# st.markdown('---')
-# description = st.text_input('Brief description for this response:')
-# save_button = st.button('Save Response')
-
-
-# if save_button:
-#     if response:
-#         save_response(prompt, response, description)
-#     else:
-#         st.warning('value of response is: ' + response)
-#         st.warning('Please provide a brief description before saving.')
 
 st.markdown('---')      
 # Display details for the selected record
